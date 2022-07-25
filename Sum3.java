@@ -18,12 +18,13 @@ public class Sum3 {
         for (int i = 0; i < nums.length; i++) {
             Map<Integer,Integer>mp=new HashMap<>();
             for (int j = 0; j < nums.length; j++) {
+               if(nums[i]!=nums[j] || nums.length<4||nums[i]==0)
                 if(!mp.containsKey(nums[j]))
                 {
                     mp.put(-nums[i]-nums[j], nums[j]);
                    
                 }
-                else 
+                else if(i!=j)
                 {
                     
                     List<Integer> lis=new LinkedList<>();
