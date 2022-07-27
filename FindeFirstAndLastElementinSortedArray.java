@@ -5,8 +5,13 @@ public class FindeFirstAndLastElementinSortedArray {
     searchRange(nums, target);
   }
   
-    public static int[] searchRange(int[] nums, int target) {
+    public static int[] searchRangefail(int[] nums, int target) {
     int beg=0;int end=nums.length-1;
+   if(nums.length==1)
+   if(target==nums[nums.length-1])
+   return new int[]{0,0};
+   else
+   return new int[]{-1,-1};
     int i=-1,j=-1;
     while(beg<=end)
     {
@@ -17,7 +22,7 @@ public class FindeFirstAndLastElementinSortedArray {
     }
     if(i==-1)
     return new int[]{-1,-1};
-    while(nums[i]==target&&nums[j]==target)
+    while(i>=0&&j<nums.length-1 &&nums[i]==target&&nums[j]==target )
     {
         if(nums[i]==target)
         i--;
@@ -27,5 +32,21 @@ public class FindeFirstAndLastElementinSortedArray {
     System.out.println(i+j);
     return new int[]{i,j};
     
+    }
+
+
+    private static int search(int[] nums, int target) {
+        int lo = 0, hi = nums.length - 1;
+        while(lo <= hi){
+            int mid = lo + (hi - lo) / 2;
+            if(target > nums[mid]) lo = mid + 1;
+            else hi = mid - 1;
+        }
+        return lo;
+    }
+    public static int[] searchRange(int[] nums, int target) {
+        int lo = search(nums, target), hi = search(nums, target + 1) - 1;
+        if(lo > hi) return new int[]{-1, -1};
+        return new int[]{lo, hi};
     }
 }
