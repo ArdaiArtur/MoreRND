@@ -43,12 +43,7 @@ public class Sum3 {
                 }
             }
 
-// target --1->1 
-// then at -1 mp 2
-//at 0 m=2,1
-// at 1m=2,1,0
-//at 2 found  -1 2 -1
-                
+
         }
         return fin;
     }
