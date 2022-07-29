@@ -4,6 +4,6 @@ public class OutOfBoundaryPhats {
     }
     
     public int FindPaths(int m, int n, int maxMove, int startRow, int startColumn) {
-        
+        return 0;
     }
 }
