@@ -1,14 +1,14 @@
 public class SuperUglyNumber {
     public static void main(String[] args) {
-        nthSuperUglyNumber(29,new int[] {3,5,7,17,19,23,29,43,47,53});
+        nthSuperUglyNumber(5911,new int[] {2,3,5,7});
     }
     public static int nthSuperUglyNumber(int n, int[] primes) {
         int[] dp = new int[n];
         int []man= new int [primes[primes.length-1]+1];
         dp[0] = 1;
-     int db=0;
+     
         for (int i = 1; i < n; i++) {
-       int minx=1000;
+       int minx=Integer.MAX_VALUE;
        int sp=0;
        
             for (int ix : primes) {
@@ -17,25 +17,30 @@ public class SuperUglyNumber {
                     sp=ix;
                    
                 }
+                if(dp[man[ix]]*ix>0)
                 minx=Math.min(dp[man[ix]]*ix,minx);
 
             }
             dp[i] = minx;
            int fd=minx;
-                while(fd%sp==0)
+           for (int ix : primes) {
+            if(fd%ix==0)
+            {
+                man[ix]++;
+            while(fd%ix==0)
                 {
-                    fd=fd/sp;
+                    fd=fd/ix;
                 } 
-               
-            if(man[fd]!=0&&db>man[fd])
-            { 
-                
-                man[fd]++; 
-                System.out.print(fd+" ");
             }
-            man[sp]++; System.out.print(sp+" ");
+            if(fd==1) break;
+          
+        }
+                
+               
+           
+            System.out.print(sp+" ");
             System.out.println(dp[i]+" ");
-            db++;
+          
         }
         
         return dp[n - 1];       
