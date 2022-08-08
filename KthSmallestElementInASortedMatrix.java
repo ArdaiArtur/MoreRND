@@ -1,6 +1,8 @@
 public class KthSmallestElementInASortedMatrix {
     public static void main(String[] args) {
-        
+        LongestIncreasingSubsequence ks=new LongestIncreasingSubsequence();
+        int nums[]=new int []{1,3,6,7,9,4,10,5,6};
+        ks.lengthOfLIS(nums);
     }
     public int kthSmallest(int[][] matrix, int k) {
         if(matrix.length==1)
