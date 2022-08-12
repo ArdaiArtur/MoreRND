@@ -1,6 +1,6 @@
 package BinaryTreeBasics;
 
-import java.util.Arrays;
+
 import java.util.Stack;
 
 public class BT1 {
@@ -29,7 +29,7 @@ public class BT1 {
     {
         if(me==null) return null;
         var left=mmtt(me.left);
-        var right=mmtt(me.right);
+       // var right=mmtt(me.right);
        //fail return  new TreeNode{me.val,left,right};
         return left;
     }

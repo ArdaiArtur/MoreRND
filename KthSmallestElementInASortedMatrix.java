@@ -34,7 +34,7 @@ public class KthSmallestElementInASortedMatrix {
             else high = mid;
         }
  
-        return low;
+        return low+fin;
      }
      
       public int lessEqual(int[][] matrix , int t ){
