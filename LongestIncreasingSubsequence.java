@@ -6,7 +6,7 @@ import java.util.Vector;
 public class LongestIncreasingSubsequence {
    
    public static void main(String[] args) {
-    int [] nums=new int[]{10,9,2,5,3,7,101,18};
+    
 
    }
    
@@ -48,7 +48,7 @@ public class LongestIncreasingSubsequence {
                 al.set(index,nums[i]);
             }
         }
-       // printLCS(nums);
+        printLCS(nums);
         return al.size();
     }
     private Vector<Integer> largestDivisibleSubset;
