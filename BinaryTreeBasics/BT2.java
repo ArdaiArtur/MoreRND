@@ -1,5 +1,6 @@
 package BinaryTreeBasics;
 
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -24,5 +25,13 @@ public class BT2 {
             qu.add(de.left);
         }
         return a;
+    }
+
+    public static boolean rectre1finde(TreeNode me,int Target)
+    {
+        if(me==null) return false;
+        if(me.val==Target) return true;
+       return rectre1finde(me.left, Target) ||
+        rectre1finde(me.right, Target);
     }
 }
