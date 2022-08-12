@@ -20,7 +20,7 @@ public class BT1 {
             sts.add(cur.left);
             if(cur.right!=null)
             sts.add(cur.right);
-            
+
         }
 
     }
@@ -28,9 +28,3 @@ public class BT1 {
     }
 
 
- class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-     }
