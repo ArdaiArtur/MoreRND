@@ -1,15 +1,13 @@
 public class PalidromeLinkedList {
     public boolean isPalindrome(ListNode head) {
-       
-         ListNode curr=head;
          ListNode prev=null;
          ListNode next=null;
-        var man=head;
-        int n=0; 
-        if(head == null || head.next == null){
-            return true;
-        }
-        while(man!=null&&man.next!=null)
+         ListNode curr=head;
+         ListNode man=head;
+        
+            int n=0; 
+       
+        while(man!=null)
         {
             n++;
             man=man.next;
@@ -20,6 +18,7 @@ public class PalidromeLinkedList {
         curr.next=prev;
         prev=curr;
         curr=next;
+        mid--;
        }
        if(n%2!=0)
        curr=curr.next;
