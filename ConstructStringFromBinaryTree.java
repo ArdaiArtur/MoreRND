@@ -1,9 +1,7 @@
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Stack;
 
-import BinaryTreeBasics.TreeNode;
+
 
 public class ConstructStringFromBinaryTree {
     public String tree2str(TreeNode root) {
