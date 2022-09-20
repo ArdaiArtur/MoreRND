@@ -7,6 +7,7 @@ public class sometest {
         int []a=new int[]{1,2,3,4,7};
         int[] b=new int[]{1,2,1,4,7};
       System.out.println(  findLengthsomemore(a, b));
+      System.out.println(  findLength(a, b));
 
     }
     public static int findLengthsomemore(int[] A, int[] B) {
@@ -19,6 +20,12 @@ public class sometest {
                     if (ans < memo[i][j]) ans = memo[i][j];
                 }
             }
+        }
+        for (int i = 0; i < memo.length; i++) {
+            for (int j = 0; j < memo[0].length; j++) {
+                System.out.print(memo[i][j]+" ");
+            }
+            System.out.println();
         }
         return ans;
     }
@@ -33,6 +40,13 @@ public class sometest {
                     if (ans < memo[i][j]) ans = memo[i][j];
                 }
             }
+        }
+
+        for (int i = 0; i < memo.length; i++) {
+            for (int j = 0; j < memo[0].length; j++) {
+                System.out.print(memo[i][j]+" ");
+            }
+            System.out.println();
         }
         return ans;
     }
