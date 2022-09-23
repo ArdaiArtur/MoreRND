@@ -17,4 +17,17 @@ public class ConcataenationOfConsecutiveBinaryNumbers {
         return (int) result;
     }
 
+    static String convertDecToAny(int outputBase, int intput){
+        String result="";
+        while(intput!=0){
+            int value= intput%outputBase;
+            intput/=outputBase;
+            if(value<=9)
+                result= Integer.toString(value)+result;
+            else
+                result= Character.toString((char)(value+55))+result;//ASCII
+        }
+        return result;
+    }
+
 }
