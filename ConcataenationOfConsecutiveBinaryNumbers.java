@@ -1,6 +1,10 @@
 public class ConcataenationOfConsecutiveBinaryNumbers {
     public static void main(String[] args) {
         concatenatedBinary(3);
+        String a="man";
+        String b="han";
+        b=a+b;
+        System.out.println(b);
     }
 // so from base 10 to lower basese is basicly \\\total= number %base\\\\ and then  number=number/base
 // to upper bases is basicly value =input%outputbase check if is smaller or bigger then 9 if smaller then result +=value(string)
