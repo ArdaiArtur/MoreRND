@@ -25,7 +25,7 @@ public class TimeMap {
         }
 
         for (int currTime = timestamp; currTime >= 1; --currTime) {
-            // If a value for current time is stored in key's bucket we return the value.
+            
             if (fin.get(key).containsKey(currTime)) {
                 return fin.get(key).get(currTime);
             }
