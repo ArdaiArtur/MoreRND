@@ -1,29 +1,29 @@
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.HashMap;
+
 
 public class TimeMap {
-    HashSet<String> key=new HashSet<>();
-   Queue<String> value=new LinkedList<>();
-   HashSet<Integer> timestamp=new HashSet<>();
+   HashMap<String, HashMap<Integer,String>>fin=new HashMap<>();
    String timestamp_prev="";
-   int tp;
     public TimeMap() {
         
     }
     
     public void set(String key, String value, int timestamp) {
-        this.timestamp.add(timestamp);
-        this.key.add(key);
-        this.value.add(value);
-        this.tp=timestamp;
+        HashMap<Integer,String>hs=new HashMap<>();
+        hs.put(timestamp, value);
+        fin.put(key, hs);
     }
     
     public String get(String key, int timestamp) {
-        if(this.key.contains(key)&&(this.timestamp.contains(timestamp)||tp<timestamp))
-        if(value.size()>0)
+        if(fin.containsKey(key))
         {
-        timestamp_prev=value.remove();
+            var x=fin.get(key);
+            for (var keys : x.keySet()) {
+                if(timestamp>keys)
+                {
+                    timestamp_prev=x.get(keys);
+                }
+            }
         }
         return timestamp_prev;
     }   
