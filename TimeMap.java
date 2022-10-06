@@ -9,23 +9,29 @@ public class TimeMap {
     }
     
     public void set(String key, String value, int timestamp) {
-        HashMap<Integer,String>hs=new HashMap<>();
-        hs.put(timestamp, value);
-        fin.put(key, hs);
+       if(!fin.containsKey(key))
+       {
+        fin.put(key, new HashMap<Integer,String>());
+       }
+       fin.get(key).put(timestamp, value);
+       
+       
     }
     
     public String get(String key, int timestamp) {
-        if(fin.containsKey(key))
+        if(!fin.containsKey(key))
         {
-            var x=fin.get(key);
-            for (var keys : x.keySet()) {
-                if(timestamp>keys)
-                {
-                    timestamp_prev=x.get(keys);
-                }
+            return "";
+        }
+
+        for (int currTime = timestamp; currTime >= 1; --currTime) {
+            // If a value for current time is stored in key's bucket we return the value.
+            if (fin.get(key).containsKey(currTime)) {
+                return fin.get(key).get(currTime);
             }
         }
-        return timestamp_prev;
+        
+        return "";
     }   
 
 }
