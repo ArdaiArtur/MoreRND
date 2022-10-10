@@ -16,7 +16,7 @@ public class BreakAPalidrom {
                     return sb.toString();         
                 }
             }
-            sb.replace(palindrome.length()-2, palindrome.length()-1, "b");
+            sb.replace(palindrome.length()-1, palindrome.length(), "b");
             return sb.toString();
 
 
