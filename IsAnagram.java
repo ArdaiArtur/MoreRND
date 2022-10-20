@@ -1,3 +1,5 @@
+
+
 public class IsAnagram {
     public boolean isAnagram(String s, String t) {
         int[] alphabet = new int[26];       
@@ -13,7 +15,7 @@ public class IsAnagram {
             return false;          
        }
    } 
-   
+  
    return true;               
    }
 }

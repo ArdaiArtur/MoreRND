@@ -8,11 +8,7 @@ public class SubstringWithConcatenationOfAllWords {
         findSubstring(s, words);
 
     }
-public static String[] recword(String[] aw,int n,int k,boolean[]bo)
-{
-
-}
-
+    
     public static List<Integer> findSubstring(String s, String[] words) {
     int wordslenght=words.length;
     int wordtot=words[0].length();
