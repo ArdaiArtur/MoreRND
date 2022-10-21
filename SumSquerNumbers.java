@@ -14,4 +14,14 @@ public class SumSquerNumbers {
         }
         return false;
     }
+
+    public boolean judgeSquareSums(int c) {
+        for (long a = 0; a * a <= c; a++) {
+            double b = Math.sqrt(c - a * a);
+            if (b == (int) b)
+                return true;
+        }
+        return false;
+    }
+
 }
