@@ -20,6 +20,8 @@ public class MinimumGeneticMutations {
                 }
             }
         }
+        HashSet<String>hs=new HashSet<>();
+        hs.add(start);
         int coco=0;
         String s="";
         for (int i = 0; i < end.length(); i++) {
@@ -27,7 +29,7 @@ public class MinimumGeneticMutations {
             {
                 while (coco!=1&&st.size()>0) {
                     
-                
+               
                 coco=0;
                  s=st.pop();
                 for (int j = 0; j < s.length(); j++) {
