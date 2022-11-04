@@ -15,20 +15,23 @@ public class ReversVowelsOfAString {
         HashSet<Character>hs=new HashSet<>(Arrays.asList('a','e','i','o','u','A','E','I','O','U'));
         StringBuilder sb=new StringBuilder(s);
         while (i<j) {
-            if(hs.contains(sb.charAt(i))&&hs.contains(sb.charAt(j)))
+            char poz1=sb.charAt(i);
+            char poz2=sb.charAt(j);
+
+            if(isVowel(poz1)&&isVowel(poz2))
             {
                 
                 char c=sb.charAt(i);
                 sb.replace(i,i+1, sb.charAt(j)+"");
-                sb.replace(j-1,j, c+"");
+                sb.replace(j,j+1, c+"");
                 i++;
                 j--;
             }
-            else if(hs.contains(sb.charAt(i))&&!hs.contains(sb.charAt(j)))
+            else if(isVowel(poz1)&&!isVowel(poz2))
             {
                 j--;
             }
-            else if(!hs.contains(sb.charAt(i))&&hs.contains(sb.charAt(j)))
+            else if(!isVowel(poz1)&&isVowel(poz2))
             {
                 i++;
             }
