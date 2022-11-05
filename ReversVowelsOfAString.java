@@ -1,5 +1,4 @@
-import java.util.Arrays;
-import java.util.HashSet;
+
 
 
 
@@ -12,7 +11,7 @@ public class ReversVowelsOfAString {
     public String reverseVowels(String s) {
         int i=0;
         int j=s.length()-1;
-        HashSet<Character>hs=new HashSet<>(Arrays.asList('a','e','i','o','u','A','E','I','O','U'));
+       
         StringBuilder sb=new StringBuilder(s);
         while (i<j) {
             char poz1=sb.charAt(i);
