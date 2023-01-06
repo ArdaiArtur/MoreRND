@@ -23,7 +23,16 @@ public class Single_threadedCPU {
             {
                 currTime=sortedTasks[taskIndex][0];
             }
+            while (taskIndex<tasks.length && currTime>=sortedTasks[taskIndex][0]) {
+                pq.add(sortedTasks[taskIndex]);
+                taskIndex++;
+            }
+            int processTime = pq.peek()[1];
+            int index = pq.peek()[2];
+            pq.remove();
+            currTime+=processTime;
+            fin[ansIndex++]=index;
         }
-
+        return fin;
     }
 }
